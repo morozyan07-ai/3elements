@@ -121,7 +121,7 @@ a.btn{text-decoration:none;display:inline-block}
 <div class="acts">
 <button class="btn" type="button" id="copy">Скопировать</button>
 <a class="btn sec" id="tgLink" target="_blank" rel="noopener" hidden>Открыть в Telegram</a>
-<button class="btn sec" type="button" id="edit">Изменить</button>
+<button class="btn sec" type="button" id="edit">Новая заявка</button>
 </div>
 <p class="hint" id="cstate"></p>
 </section>
@@ -173,7 +173,7 @@ $('f').addEventListener('submit',function(ev){
   if(W&&W.initData){W.sendData(JSON.stringify(o));return}
   $('msg').textContent=lastMsg;$('cstate').textContent='';
   if(CONFIG.tgUser){$('tgLink').href='https://t.me/'+CONFIG.tgUser+'?text='+encodeURIComponent(lastMsg);$('tgLink').hidden=false}
-  $('res').classList.add('show');$('f').hidden=true;
+  $('res').classList.add('show');$('f').hidden=true;$('f').reset();
   $('res').scrollIntoView({behavior:'smooth',block:'start'});
 });
 $('copy').addEventListener('click',function(){
